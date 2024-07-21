@@ -14,6 +14,7 @@ return new class extends Migration
         //
         Schema::create('Products',function(Blueprint $table){
             $table->id();
+            $table->unsignedBigInteger('user');
             $table->string('name');
             $table->string('image');
             $table->string('description');
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->integer('stock');
             $table->unsignedBigInteger('category');
             $table->foreign('category')->references('id')->on('category')->onUpdate('cascade');
+            $table->foreign('user')->references('id')->on('users')->onUpdate('cascade');
             $table->timestamps();
         });
     }

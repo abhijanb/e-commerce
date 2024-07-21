@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-        Schema::create('Reviews',function(Blueprint $table){
+        Schema::create('Reviews', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user');
-            $table->unsignedBigInteger('products');
+            $table->unsignedBigInteger('product');
             $table->integer('rating');
             $table->string('commit');
-            $table->timestamps('review_date');
+            $table->timestamps(); // creates `created_at` and `updated_at` columns
+            $table->timestamp('review_date')->nullable(); // specific review_date column
             $table->foreign('user')->references('id')->on('users')->onUpdate('cascade');
-            $table->foreign('products')->references('id')->on('Products')->onUpdate('cascade');
+            $table->foreign('product')->references('id')->on('Products')->onUpdate('cascade');
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('Reviews');
     }
 };
