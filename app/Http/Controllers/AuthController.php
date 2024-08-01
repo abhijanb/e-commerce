@@ -23,7 +23,7 @@ class AuthController extends Controller
             $user = Auth::user();
 
             $products = $user->products;
-            return view('seller',compact('user','products'));
+            return view('welcome',compact('user','products'));
         }
 
         return back()->withErrors([

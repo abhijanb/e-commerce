@@ -25,9 +25,10 @@ Route::post('/signup', [AuthController::class, 'signupStore'])->name('signup.sto
 Route::get('/signin',[AuthController::class,'showLoginForm']);
 Route::post('/signin',[AuthController::class,'login']);
 
-Route::get('/sellerView',[AuthController::class,'sellerView']);
+// Route::post('/sellerView',[AuthController::class,'sellerView']);
 
 Route::get('/seller',[SellerController::class,'signIn']);
+Route::post('/seller',[AuthController::class,'sellerView']);
 Route::get('/add-product',[SellerController::class,'addProductView']);
 Route::post('/add-product',[SellerController::class,'addProduct']);
 

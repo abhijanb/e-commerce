@@ -1,18 +1,17 @@
 <body >
-    <div class="bg-gray-500 border border-white h-10 flex justify-around items-center ">
-        <a href="/" ><div class="w-28 h-10 flex justify-center items-center "><p class=" text-white text-base">E-commerce</p><span class="text-white">.in</span></div></a>
-        <p>Add your address</p>
-        <div><input class="w-64" type="text" placeholder="Search"></div>
+    <div class="bg-gray-500 border border-white h-10 flex justify-around items-center text-white text-xs md:text-base sm:text-sm ">
+        <a href="/" ><div class="w-28 h-10 flex justify-center items-center "><p class="">E-commerce</p><span class="text-white">.in</span></div></a>
+        <p class="hidden sm:block">Add your address</p>
+        <div><input class="w-40 sm:w-64" type="text" placeholder="Search"></div>
         <div><a href="/signin" class="text-white">SignIn</a></div>
-        <div><a href="/returnOrder" class="text-white">Return Orders</a></div>
+        <div><a href="/returnOrder" class="text-white border border-black">Return Orders</a></div>
         <div class="w-24 h-10 flex ">            
             <div class=" relative"><img class="w-14 h-10  border-black text-white"  src="images/amazon cart logo.png" alt="">
             <div class="absolute bottom-[16px] left-[19px] font-bold text-white">1</div>
             </div>        
-
         </div>
     </div>
-<nav class=" bg-gray-200 p-4 flex justify-between">
+<nav class=" bg-gray-200 p-4 flex justify-between text-xs md:text-base sm:text-sm">
     <div class=" flex items-center">
         <a href="">
         <div class="flex items-center space-x-2">

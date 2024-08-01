@@ -1,109 +1,64 @@
-<div class="category flex flex-row justify-around mb-5">
-        
-    <div class="gamingCategory  w-[333px] h-[340px] border-black border bg-white text-gray-500">
+<div class="category grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-y-5 justify-items-center mb-5 border border-black font-bold">
+    <div class="gamingCategory  w-[343px] h-[360px] border-black border bg-white text-gray-500">
         <h1 class="p-4">Gaming Accessory</h1>
-        <div class="">
-            <div class="flex flex-row justify-around">
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item1</p></div>
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
-                
-            </div>
-            <div class="flex flex-row justify-around">
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item3</p></div>
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item4</p></div>
-                
-            </div>
-            
-        </div>
+        <div class="grid grid-cols-2 gap-4 justify-items-center">
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+          </div>
     </div>
-    <div class="fashion  w-[333px] h-[340px] border-black border  bg-white text-gray-500">
-        <h1 class="p-4">Shop deals in Fashion</h1>
-        <div class="">
-            <div class="flex flex-row justify-around">
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item1</p></div>
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
-                
-            </div>
-            <div class="flex flex-row justify-around">
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item3</p></div>
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item4</p></div>
-                
-            </div>
-            
-        </div>
+    <div class="fashion  w-[343px] h-[360px] border-black border  bg-white text-gray-500">
+        <h1 class="p-4 ">Shop deals in Fashion</h1>
+        <div class="grid grid-cols-2 gap-4 justify-items-center">
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+          </div>
     </div>
-    <div class="fashion  w-[333px] h-[340px] border-black border  bg-white text-gray-500">
+    <div class="fashion  w-[343px] h-[360px] border-black border  bg-white text-gray-500">
         <h1 class="p-4">Refresh your space</h1>
-        <div class="">
-            <div class="flex flex-row justify-around">
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item1</p></div>
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
-                
-            </div>
-            <div class="flex flex-row justify-around">
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item3</p></div>
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item4</p></div>
-                
-            </div>
-            
-        </div>
+        <div class="grid grid-cols-2 gap-4 justify-items-center">
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+          </div>
     </div>
-</div>
-
-
-<div class="category flex flex-row justify-around mb-5">
     
-    <div class="PCs w-[333px] h-[340px] border-black border  bg-white text-gray-500">
+    
+    
+    <div class="PCs w-[343px] h-[360px] border-black border  bg-white text-gray-500">
         <h1 class="p-4">Deals in PCs</h1>
-        <div class="">
-            <div class="flex flex-row justify-around">
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item1</p></div>
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
-                
-            </div>
-            <div class="flex flex-row justify-around">
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item3</p></div>
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item4</p></div>
-                
-            </div>
-            
+        <div class="grid grid-cols-2 gap-4 justify-items-center">
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
         </div>
     </div>
-    <div class="fashion  w-[333px] h-[340px] border-black border  bg-white text-gray-500">
+    <div class="fashion  w-[343px] h-[360px] border-black border  bg-white text-gray-500">
         <h1 class="p-4">Toys under $25</h1>
-        <div class="">
-            <div class="flex flex-row justify-around">
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item1</p></div>
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
-                
-            </div>
-            <div class="flex flex-row justify-around">
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item3</p></div>
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item4</p></div>
-                
-            </div>
-            
+        <div class="grid grid-cols-2 gap-4 justify-items-center">
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
         </div>
     </div>
-    <div class="fashion  w-[333px] h-[340px] border-black border  bg-white text-gray-500">
+    <div class="fashion  w-[343px] h-[360px] border-black border  bg-white text-gray-500">
         <h1 class="p-4">Amazon Gadget Store</h1>
-        <div class="">
-            <div class="flex flex-row justify-around">
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item1</p></div>
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
-                
-            </div>
-            <div class="flex flex-row justify-around">
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item3</p></div>
-                <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item4</p></div>
-                
-            </div>
-            
+        <div class="grid grid-cols-2 gap-4 justify-items-center">
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
+            <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
         </div>
     </div>
 </div>
 
-<div class="bg-white text-gray-500 w-full h-[282px]  border border-blue-800">
+<div class="bg-white text-gray-500 w-full h-[282px]  border border-blue-800 font-bold">
     <h1 class="border border-black p-4">Best selling books</h1>
     <div class=" flex flex-row overflow-x-auto snap-x ml-6 border border-red-500 justify-between">
         <div class="mr-4">
