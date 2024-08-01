@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('Wishlist',function(Blueprint $table){
+        Schema::create('wishlist',function(Blueprint $table){
             $table->id();
             $table->integer('wished_price');
             $table->unsignedBigInteger('user');
             $table->unsignedBigInteger('products');
             $table->timestamps();
             $table->foreign('user')->references('id')->on('users')->onUpdate('cascade');
-            $table->foreign('products')->references('id')->on('Products')->onUpdate('cascade');
+            $table->foreign('products')->references('id')->on('products')->onUpdate('cascade');
         });
     }
 

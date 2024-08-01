@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('Products',function(Blueprint $table){
+        Schema::create('products',function(Blueprint $table){
             $table->id();
             $table->unsignedBigInteger('user');
             $table->string('name');
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('price');
             $table->integer('stock');
             $table->unsignedBigInteger('category');
-            $table->foreign('category')->references('id')->on('category')->onUpdate('cascade');
+            $table->foreign('category')->references('id')->on('categories')->onUpdate('cascade');
             $table->foreign('user')->references('id')->on('users')->onUpdate('cascade');
             $table->timestamps();
         });

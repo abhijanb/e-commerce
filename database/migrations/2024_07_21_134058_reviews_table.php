@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Reviews', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user');
             $table->unsignedBigInteger('product');
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamps(); // creates `created_at` and `updated_at` columns
             $table->timestamp('review_date')->nullable(); // specific review_date column
             $table->foreign('user')->references('id')->on('users')->onUpdate('cascade');
-            $table->foreign('product')->references('id')->on('Products')->onUpdate('cascade');
+            $table->foreign('product')->references('id')->on('products')->onUpdate('cascade');
         });
     }
 

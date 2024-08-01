@@ -9,9 +9,26 @@
     @vite('resources/css/app.css')
 </head>
 <header>
+    @php
+    $counts = 1;
+    $stock = $products->count();
+    $outOfStock = 0;
+    if ($stock != 0) {
+        # code...
+        foreach ($products as $product ) {
+            // echo $product['stock'];
+            if ($product['stock'] === 0) {
+                //     # code...
+                $outOfStock += 1;
+            }
+    }
+        
+        # code...
+    }
+    @endphp
     <div class="flex flex-col">
 
-        <div class="first flex justify-between items-center p-4 bg-green">
+        <div class="bg-blue-400 first flex justify-between items-center p-4 bg-green">
             <div class="second-1 flex items-center space-x-2">
                 <div class="flex items-center space-x-1">
                     <i class="fas fa-bars text-xl"></i>
@@ -57,7 +74,6 @@
                 <a href="/add-product">
                     <div class="p-4 bg-gray-200 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out">
                     <p class="text-sm font-semibold">Add Product</p>
-                    <p class="text-2xl font-bold">0</p>
                 </div>
                     </a>
                 <div class="p-4 bg-gray-200 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out">
@@ -82,11 +98,11 @@
                 </div>
                 <div class="p-4 bg-gray-200 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out">
                     <p class="text-sm font-semibold">Total Product</p>
-                    <p class="text-2xl font-bold">0</p>
+                    <p class="text-2xl font-bold">{{$stock}}</p>
                 </div>
                 <div class="p-4 bg-gray-200 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out">
                     <p class="text-sm font-semibold">Out of Product</p>
-                    <p class="text-2xl font-bold">0</p>
+                    <p class="text-2xl font-bold">{{$outOfStock}}</p>
                 </div>
             </div>
         </div>
@@ -97,4 +113,5 @@
             </div>
         </div>
     </div>
+
 </header>
