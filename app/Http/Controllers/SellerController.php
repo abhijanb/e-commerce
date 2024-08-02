@@ -13,8 +13,11 @@ class SellerController extends Controller
 {
     //
     public function signIn(){
-        return view('auth.sellerSignup');
-
+        if(Auth::check()){
+            return view('auth.sellerSignup');
+        }
+else 
+return redirect()->route('signin')->with(['message'=> 'login first to become seller ']);
     }
 
     public function addProductView(){
@@ -35,13 +38,13 @@ class SellerController extends Controller
         'price' => 'required|numeric',
         'stock' => 'required|integer',
         'description' => 'nullable|string',
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048' // Image is required
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048' 
     ]);
 
     // Create a new product instance
     $product = new Products();
     $product->category = $validatedData['category'];
-    $product->user = Auth::id(); // Ensure that Auth::id() returns the authenticated user's ID
+    $product->user = Auth::id(); // Auth::id() returns the authenticated user's ID
     $product->name = $validatedData['name'];
     $product->price = $validatedData['price'];
     $product->stock = $validatedData['stock'];
@@ -61,7 +64,6 @@ class SellerController extends Controller
     return redirect('/sellerView');
 }
 
-
     public function getUserProducts($userId)
     {
         $user = User::find($userId);
@@ -70,8 +72,10 @@ class SellerController extends Controller
         return view('seller', ['products' => $products]);
       
     }
-    public function dis(){
-        dd($_SERVER);
-        
+    public function sellerView(){
+        $user = Auth::user();
+
+            $products = $user->products;
+            return view('seller',compact('user','products'));
     }
 }

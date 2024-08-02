@@ -60,10 +60,5 @@ class AuthController extends Controller
         return redirect()->route('dash');
     }
 
-    public function sellerView(){
-        $user = Auth::user();
-
-            $products = $user->products;
-            return view('seller',compact('user','products'));
-    }
+   
 }

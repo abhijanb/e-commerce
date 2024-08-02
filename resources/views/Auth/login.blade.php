@@ -15,6 +15,13 @@
             <h1 class="text-center text-xl font-bold mb-6">
                 Sign In to Your Account
             </h1>
+            
+            @if (session('message'))
+                <div class="mb-4 text-red-500 text-center">
+                    {{ session('message') }}
+                </div>
+            @endif
+
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
@@ -28,10 +35,9 @@
                     Sign In
                 </button>
             </div>
-        
+
             <p class="mt-4 text-center text-gray-600 text-sm">Don't have an account? <a href="/signup" class="text-blue-500">Sign up</a></p>
         </form>
     </div>
-</div>
 </body>
 </html>

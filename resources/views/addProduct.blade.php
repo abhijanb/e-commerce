@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite('resources/css/app.css') <!-- Ensure Tailwind is included -->
-    <title>Product Form</title>
-</head>
+<header-components></header-components>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white p-8 w-96 rounded-lg shadow-lg border border-black">
         <h1 class="text-2xl font-bold mb-6 text-center">Product Form</h1>
@@ -52,4 +44,4 @@
         </form>
     </div>
 </body>
-</html>
+<footer></footer>

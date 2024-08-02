@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite('resources/css/app.css
-    ')
-    <title>Document</title>
-</head>
-<body>
-    <body>
+<x-header-components></x-header-components>
+<x-nav-bar-components></x-nav-bar-components>
+    <body class="text-gray-500">
         <div class="flex flex-row">
             <div class="w-3/4 border border-black flex-col">
                 <h1 class="text-2xl font-bold mb-4">Shopping Cart</h1>
@@ -46,5 +37,4 @@
             </aside>
         </div>
     </body>
-</body>
-</html>
+<footer></footer>
