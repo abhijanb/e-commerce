@@ -69,10 +69,12 @@
             <p class="font-semibold text-gray-900">Customer Feedback</p>
             <span class="text-2xl font-bold">0</span>
         </div>
-        <div class="p-4 bg-white shadow rounded-lg border border-gray-200">
-            <p class="font-semibold text-gray-900">Total Products</p>
-            <span class="text-2xl font-bold">{{$stock}}</span>
-        </div>
+        <a href="/productView">
+            <div class="p-4 bg-white shadow rounded-lg border border-gray-200">
+                <p class="font-semibold text-gray-900">Total Products</p>
+                <span class="text-2xl font-bold">{{$stock}}</span>
+            </div>
+        </a>
         <div class="p-4 bg-white shadow rounded-lg border border-gray-200">
             <p class="font-semibold text-gray-900">Out of Stock</p>
             <span class="text-2xl font-bold">{{$outOfStock}}</span>

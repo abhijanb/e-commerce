@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
@@ -21,22 +23,7 @@ class UsersSeeder extends Seeder
                 'password' => Hash::make('password'), // Hash the password
                 'remember_token' => Str::random(10),
             ],
-            // [
-            //     'name' => 'Jane Smith',
-            //     'role' => 'user',
-            //     'email' => 'jane@example.com',
-            //     'email_verified_at' => now(),
-            //     'password' => Hash::make('password'),
-            //     'remember_token' => Str::random(10),
-            // ],
-            // [
-            //     'name' => 'Alice Johnson',
-            //     'role' => 'user',
-            //     'email' => 'alice@example.com',
-            //     'email_verified_at' => now(),
-            //     'password' => Hash::make('password'),
-            //     'remember_token' => Str::random(10),
-            // ],
+            // Additional users can be added here
         ];
 
         // Loop through each user and create a record in the users table

@@ -61,3 +61,7 @@ Route::get('/searchDisplay',function(){
 });
 
 Route::get('/add/{id}',[UserViewController::class,'addToCart']);
+
+Route::get('/productView',[SellerController::class,'displayTotalProduct']);
+Route::get('/update/{id}',[SellerController::class,'update']);
+Route::put('/update/{id}',[SellerController::class,'updateStore']);

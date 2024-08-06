@@ -44,6 +44,8 @@ return redirect()->route('signin')->with(['message'=> 'login first to become sel
         'price' => 'required|numeric',
         'stock' => 'required|integer',
         'description' => 'nullable|string',
+        'details.*.key' => 'required|string|max:255',
+        'details.*.value' => 'required|string|max:255',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
 
@@ -64,6 +66,16 @@ return redirect()->route('signin')->with(['message'=> 'login first to become sel
     $product->stock = $validatedData['stock'];
     $product->description = $validatedData['description'];
 
+    // Convert details array to JSON format
+    $details = [];
+    foreach ($validatedData['details'] as $detail) {
+        $details[] = [
+            'key' => $detail['key'],
+            'value' => $detail['value'],
+        ];
+    }
+    $product->details = json_encode($details);
+
     // Handle file upload
     if ($request->hasFile('image')) {
         $image = $request->file('image');
@@ -76,12 +88,11 @@ return redirect()->route('signin')->with(['message'=> 'login first to become sel
     // Save the product to the database
     $product->save();
 
-    // Get the updated list of products for the view
-    $products = $user->products;
-
     // Redirect with a success message or return to the view
-    return redirect('/sellerPage');
+    return redirect('/sellerPage')->with('success', 'Product added successfully!');
 }
+
+    
 
     public function getUserProducts($userId)
     {
@@ -110,6 +121,75 @@ return redirect()->route('signin')->with(['message'=> 'login first to become sel
         // Pass user and products to the view
         return view('seller', compact('user', 'products'));
     }
+    
+    public function displayTotalProduct(){
+        $user = Auth::user()->id; // Get the authenticated user's ID
+        $items = Products::where('user', $user)->get(); // Retrieve products associated with the user
+        return view('seller-total-product-view', compact('items')); // Pass the products to the view
+    }
+    public function update($id){
+        $product = Products::find($id);
+        return view('seller-single-product-view',compact('product')); // Pass the products to the view
+    }
+    public function updateStore(Request $request, $productId) {
+        $validatedData = $request->validate([
+            'category' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'stock' => 'required|integer',
+            'description' => 'nullable|string',
+            'details.*.key' => 'required|string|max:255',
+            'details.*.value' => 'required|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Changed to nullable
+        ]);
+    
+        try {
+            $category = Category::where('category', $validatedData['category'])->first();
+            
+            // If the category doesn't exist, create a new one
+            if (!$category) {
+                $category = Category::create(['category' => $validatedData['category']]);
+            }
+    
+            // Retrieve the existing product
+            $product = Products::findOrFail($productId); // Find product by ID, or fail if not found
+    
+            // Update product attributes
+            $product->category = $category->id; // Use the ID of the existing or newly created category
+            $product->user = Auth::id(); // Auth::id() returns the authenticated user's ID
+            $product->name = $validatedData['name'];
+            $product->price = $validatedData['price'];
+            $product->stock = $validatedData['stock'];
+            $product->description = $validatedData['description'];
+    
+            // Convert details array to JSON format
+            $details = [];
+            foreach ($validatedData['details'] as $detail) {
+                $details[] = [
+                    'key' => $detail['key'],
+                    'value' => $detail['value'],
+                ];
+            }
+            $product->details = json_encode($details);
+    
+            // Handle file upload if a new image is provided
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                // Generate a unique file name
+                $imageName = time() . '.' . $image->getClientOriginalExtension();
+                $imagePath = $image->storeAs('products', $imageName, 'public');
+                $product->image = $imagePath;
+            }
+    
+            // Save the updated product
+            $product->save();
+    
+            return redirect()->back()->with('success', 'Product updated successfully!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'There was an error updating the product: ' . $e->getMessage());
+        }
+    }
+    
     
     
 }

@@ -1,5 +1,4 @@
-<body>
-    <div class=" bg-gray-500  p-4 flex justify-between text-xs md:text-base sm:text-sm">
+    <div class=" bg-gray-500  p-4 flex justify-between text-xs md:text-base sm:text-sm text-white">
         <div class="flex space-x-4">
             <a href="/" ><div class="w-28 h-10 flex justify-center items-center "><p class="">E-commerce</p><span class="text-white">.in</span></div></a>
             <p class="hidden  sm:justify-center sm:flex sm:items-center ">Add your address</p>
