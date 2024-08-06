@@ -1,5 +1,5 @@
-<x-header-components></x-header-components>
-<x-nav-bar-components></x-nav-bar-components>
+<x-header-component></x-header-component>
+<x-nav-bar-component></x-nav-bar-component>
     <body class="text-gray-500">
         <div class="flex flex-row">
             <div class="w-3/4 border border-black flex-col">
@@ -7,6 +7,8 @@
                 <div class="flex flex-row items-end justify-end mr-10 mt-[-40px]">
                     <h2>Price</h2>
                 </div>
+                @foreach ($products as $product)
+                    
                 <div class="relative flex flex-row border-t border-r-2 border-b border-black m-5 p-6 items-start justify-start">
                     <div class="flex flex-row mr-4">
                         <input class="form-checkbox" type="checkbox" name="add" id="add">
@@ -15,8 +17,9 @@
                         <img src="images/b1.jpg" alt="" class="w-24 h-[100px] object-cover">
                     </div>
                     <div>
-                        <h2 class="text-lg text-green-500">Echo Spot adjustable stand - white</h2>
-                        <p>In stock</p>
+                        <h2 class="text-lg text-green-500">{{$product->name}}</h2>
+                        <p>{{ $product->stock > 0 ? 'In stock' : 'Out of stock' }}</p>
+
                         <p>Quantity: 1</p>
                         <p class="cursor-pointer text-red-500 hover:underline">Delete</p>
                         <p class="cursor-pointer text-blue-500 hover:underline">Save for later</p>
@@ -26,6 +29,8 @@
                         <p class="font-bold absolute top-5 right-5 ">Price: $100</p>
                     </div>
                 </div>
+                @endforeach
+
             </div>
             <aside class="w-1/4 bg-white border border-black rounded p-4 ml-4">
                 <h2 class="text-xl font-bold mb-2">Subtotal (1 item): $29374</h2>

@@ -1,6 +1,5 @@
-<x-head></x-head>
-<x-header></x-header>
-<x-navbar></x-navbar>
+<x-header-component></x-header-component>
+<x-nav-bar-component></x-nav-bar-component>
 <body>
     <div class="flex flex-col mt-7">
         <div class="flex justify-between">

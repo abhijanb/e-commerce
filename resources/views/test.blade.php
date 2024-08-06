@@ -152,8 +152,6 @@
         </div>
     </div>
     
-
 </div>
-
 </main>
 <x-footer></x-footer>

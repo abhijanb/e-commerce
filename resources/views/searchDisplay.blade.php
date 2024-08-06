@@ -1,10 +1,8 @@
-<x-header-components></x-header-components>
-<x-nav-bar-components></x-nav-bar-components>
+<x-header-component></x-header-component>
+<x-nav-bar-component></x-nav-bar-component>
 <div class="flex flex-row justify-between">
     <div>
-        <x-header></x-header>
         <body class="bg-white">
-            <x-navbar></x-navbar>
             <div class="flex flex-row justify-between mt-8 items-start">
                 <div class="w-[294px] p-1">
                     <h1 class="mb-[16px]">Filter</h1>

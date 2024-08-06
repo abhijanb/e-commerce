@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('image');
             $table->string('description');
+            $table->string('details');
             $table->integer('price');
             $table->integer('stock');
             $table->unsignedBigInteger('category');
