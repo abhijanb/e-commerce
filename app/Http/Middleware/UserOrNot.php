@@ -16,8 +16,11 @@ class UserOrNot
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!Auth::check()){
-            return redirect('/signin');
+        if (!Auth::check()) {
+            // Passing data directly to the view
+            session()->flash('message', 'You are not a user.');
+
+            return response()->view('auth.login');
         }
         return $next($request);
     }

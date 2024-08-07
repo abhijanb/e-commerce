@@ -20,5 +20,6 @@ class Products extends Model
         'description',
         'details',
         'image',
+        'coupons'
     ];
 }

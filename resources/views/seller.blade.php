@@ -1,7 +1,5 @@
 <x-header-component></x-header-component>
 <body class="bg-gray-100 text-gray-700">
-
-<header class="bg-gray-800 text-white">
     @php
         // Provide a default empty collection if $products is null
         
@@ -9,23 +7,7 @@
         $outOfStock = $products->where('stock', 0)->count();
     @endphp
 
-    <!-- Navigation Bar -->
-    <nav class="flex justify-between items-center px-4 py-2 border-b border-gray-700">
-        <div class="flex items-center space-x-4">
-            <a href="/" class="flex items-center h-10 text-lg font-bold">
-                <span class="text-xl">E-commerce<span class="text-yellow-400">.seller</span></span>
-            </a>
-            <div class="flex space-x-4">
-                <a href="/" class="hover:bg-gray-700 rounded py-2 px-3 text-sm font-semibold">Inventory</a>
-                <a href="/" class="hover:bg-gray-700 rounded py-2 px-3 text-sm font-semibold">Pricing</a>
-                <a href="/" class="hover:bg-gray-700 rounded py-2 px-3 text-sm font-semibold">Orders</a>
-                <a href="/" class="hover:bg-gray-700 rounded py-2 px-3 text-sm font-semibold">Advertising</a>
-                <a href="/" class="hover:bg-gray-700 rounded py-2 px-3 text-sm font-semibold">Store</a>
-                <a href="/" class="hover:bg-gray-700 rounded py-2 px-3 text-sm font-semibold">Reports</a>
-            </div>
-        </div>
-    </nav>
-</header>
+<x-seller-navbar-components></x-seller-navbar-components> 
 
 <main class="container mx-auto p-4">
     <!-- Dashboard Section -->
@@ -54,7 +36,7 @@
             <p class="font-semibold text-gray-900">Seller Reviews</p>
             <span class="text-2xl font-bold">0</span>
         </div>
-        <a href="/add-product" class="p-4 bg-white shadow rounded-lg border border-gray-200 hover:bg-gray-100 transition duration-300">
+        <a href="{{route('sellerProductAdd.create')}}" class="p-4 bg-white shadow rounded-lg border border-gray-200 hover:bg-gray-100 transition duration-300">
             <span class="text-sm font-semibold">Add Product</span>
         </a>
         <div class="p-4 bg-white shadow rounded-lg border border-gray-200">
@@ -69,7 +51,7 @@
             <p class="font-semibold text-gray-900">Customer Feedback</p>
             <span class="text-2xl font-bold">0</span>
         </div>
-        <a href="/productView">
+        <a href="/sellerProductAdd">
             <div class="p-4 bg-white shadow rounded-lg border border-gray-200">
                 <p class="font-semibold text-gray-900">Total Products</p>
                 <span class="text-2xl font-bold">{{$stock}}</span>

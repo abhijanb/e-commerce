@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Auth;
 class SellerController extends Controller
 {
     //
+public function sellerDashPage(){
+    $user = Auth::user();
+   
+    $products = Products::where('user',Auth::id())->get();
+    return view('seller',compact('products'));
+}
+
     public function signIn(){
         if(Auth::check()){
             return view('auth.sellerSignup');
@@ -34,8 +41,6 @@ return redirect()->route('signin')->with(['message'=> 'login first to become sel
    
     public function addProduct(Request $request)
 {
-    // Get the authenticated user
-    $user = Auth::user();
 
     // Validate the request data
     $validatedData = $request->validate([
@@ -108,7 +113,6 @@ return redirect()->route('signin')->with(['message'=> 'login first to become sel
         $user = Auth::user();
         
         // Get the user's associated products
-        $products = $user->products;
     
         // Check if the user's role is not 'seller'
         if ($user->role != 'seller') {
@@ -119,7 +123,7 @@ return redirect()->route('signin')->with(['message'=> 'login first to become sel
         }
     
         // Pass user and products to the view
-        return view('seller', compact('user', 'products'));
+        return redirect('/sellerPage');
     }
     
     public function displayTotalProduct(){
@@ -166,8 +170,7 @@ return redirect()->route('signin')->with(['message'=> 'login first to become sel
             $details = [];
             foreach ($validatedData['details'] as $detail) {
                 $details[] = [
-                    'key' => $detail['key'],
-                    'value' => $detail['value'],
+                    $detail['key'] => $detail['value'],
                 ];
             }
             $product->details = json_encode($details);

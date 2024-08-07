@@ -4,7 +4,7 @@
     <div class="bg-white p-8 w-full max-w-lg rounded-lg shadow-lg border ">
         <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Product Form</h1>
         
-        <form action="/add-product" method="POST" class="space-y-6" enctype="multipart/form-data">
+        <form action="{{route('sellerProductAdd.store')}}" method="POST" class="space-y-6" enctype="multipart/form-data">
             @csrf <!-- Include CSRF token for form security -->
             
             <!-- Error Messages -->
@@ -101,6 +101,23 @@
                     <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
                 @enderror
             </div>
+
+            {{-- coupons --}}
+            <!-- Coupons Input -->
+<div class="form-group">
+    <label for="coupons" class="block text-sm font-semibold mb-2 text-gray-700">Coupons</label>
+    <input
+        type="text"
+        id="coupons"
+        name="coupons"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        placeholder="Coupons"
+    >
+    @error('coupons')
+        <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+    @enderror
+</div>
+
 
             <!-- Details Input Group -->
             <div class="form-group">

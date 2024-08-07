@@ -18,7 +18,9 @@ class CheckSellerOrNot
     {
         $user = Auth::user();
         if($user->role != 'seller'){
-            return redirect('/seller');
+            session()->flash('message', 'You must log in to become seller.');
+            return redirect('/sellerLogin');
+
         }
         return $next($request);
     }

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('price');
             $table->integer('stock');
             $table->unsignedBigInteger('category');
+            $table->string('coupons');
             $table->foreign('category')->references('id')->on('categories')->onUpdate('cascade');
             $table->foreign('user')->references('id')->on('users')->onUpdate('cascade');
             $table->timestamps();

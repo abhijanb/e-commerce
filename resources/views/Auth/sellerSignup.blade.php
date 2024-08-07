@@ -1,7 +1,7 @@
 <x-header-component></x-header-component>
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
     <div class="bg-white text-gray-500 shadow-lg rounded-lg p-8">
-        <form action="/seller" method="POST" class="w-full max-w-sm mx-auto">
+        <form action="/sellerPage" method="POST" class="w-full max-w-sm mx-auto">
             @csrf
             <h1 class="text-center text-xl font-bold mb-6">
                 Welcome to ecommerce for selling. You are not a seller at ecommerce. To be a seller, sign up for seller.
