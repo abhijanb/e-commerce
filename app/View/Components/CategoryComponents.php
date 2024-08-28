@@ -8,12 +8,15 @@ use Illuminate\View\Component;
 
 class CategoryComponents extends Component
 {
+    // public $response;
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
         //
+        // return $this->response = $response;
+
     }
 
     /**

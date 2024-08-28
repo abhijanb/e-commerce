@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carts;
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,13 +11,15 @@ class UserViewController extends Controller
 {
     //
     public function DashView(){
-    $products = Products::all();
+    $products = Product::join('categories', 'products.category_id', '=', 'categories.id')
+    ->select('products.*', 'categories.category as category_name')
+    ->get();
     return view('welcome',compact('products'));
     }
 
     public function viewSearch(Request $request){
         $search = $request->input('search');
-        $products = Products::where('name', 'like', '%' . $search . '%')->get();
+        $products = Product::where('name', 'like', '%' . $search . '%')->get();
         return view('searchProduct',['products' => $products]);
     }
 

@@ -1,12 +1,13 @@
 <div class="category grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-y-5 justify-items-center mb-5 border border-black font-bold">
     <div class="gamingCategory  w-[343px] h-[360px] border-black border bg-white text-gray-500">
-        <h1 class="p-4">Gaming Accessory</h1>
+       
+        <h1 class="p-4"></h1>
         <div class="grid grid-cols-2 gap-4 justify-items-center">
             <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
             <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
             <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
             <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
-          </div>
+        </div>
     </div>
     <div class="fashion  w-[343px] h-[360px] border-black border  bg-white text-gray-500">
         <h1 class="p-4 ">Shop deals in Fashion</h1>
@@ -15,7 +16,7 @@
             <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
             <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
             <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
-          </div>
+        </div>
     </div>
     <div class="fashion  w-[343px] h-[360px] border-black border  bg-white text-gray-500">
         <h1 class="p-4">Refresh your space</h1>
@@ -24,7 +25,7 @@
             <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
             <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
             <div><img src="" alt="" class="w-[130px] h-[116px]"><p>item2</p></div>
-          </div>
+        </div>
     </div>
     
     
@@ -104,5 +105,3 @@
     </div>
 </div>
 
-
-</div>

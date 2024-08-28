@@ -1,10 +1,12 @@
-<x-header-component></x-header-component>
+{{-- <x-header-component></x-header-component>
 <x-nav-bar-component></x-nav-bar-component>
 <div class="flex flex-row justify-between">
     <div>
         <body class="bg-white">
             <div class="flex flex-row justify-between mt-8 items-start">
                 <div class="w-[294px] p-1">
+                    {{'abhijan'}}
+                    <h1 class="mb-[16px]">Filter</h1>
                     <h1 class="mb-[16px]">Filter</h1>
                     <h2 class="font-bold">Department</h2>
                     <ul class="ml-3">
@@ -64,4 +66,4 @@
     <div>
         <x-cartSideBar></x-cartSideBar>
     </div>
-</div>
+</div> --}}

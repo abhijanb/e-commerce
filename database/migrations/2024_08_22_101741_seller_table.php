@@ -14,11 +14,11 @@ return new class extends Migration
         //
         Schema::create('sellers',function(Blueprint $table){
             $table->id();
-            $table->unsignedBigInteger('user');
-            $table->unsignedBigInteger('product');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('product_id');
 
-            $table->foreign('user')->references('id')->on('users')->onUpdate('cascade');
-            $table->foreign('product')->references('id')->on('products')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onUpdate('cascade');
         });
     }
 

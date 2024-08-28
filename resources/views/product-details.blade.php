@@ -1,6 +1,14 @@
 <x-header-component></x-header-component>
 <x-nav-bar-component></x-nav-bar-component>
 <body>
+    @dd("abhijan")
+    @if (session('message'))
+    <div class="bg-black border-l-4 border-yellow-500 text-yellow-700 p-4" role="alert">
+        <p class="font-bold">Notice</p>
+        <p>{{ session('message') }}</p>
+    </div>
+@endif
+
     <div class="flex flex-col mt-7">
         <div class="flex justify-between">
             <div class="w-[422px] h-[423px]">

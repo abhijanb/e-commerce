@@ -7,7 +7,8 @@ export default {
   ],
   theme: {
     extend: {colors: {
-      green: '#34eb58', 
+      green: '#34eb58',
+      amazonColor: 'rgb(15, 17, 17)'
     }},
   },
   plugins: [],

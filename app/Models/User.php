@@ -34,6 +34,9 @@ class User extends Authenticatable
         ];
     }
     public function products(){
-        return $this->hasMany(Products::class,'user');
+        return $this->hasMany(Products::class,'user_id');
+        }
+    public function carts(){
+        return $this->hasMany(Carts::class);
         }
 }

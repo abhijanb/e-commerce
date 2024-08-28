@@ -10,4 +10,8 @@ class Category extends Model
     use HasFactory;
     protected $fillable = ['category'];
     public $timestamps = false;
+
+    public function products(){
+        $this->hasManyc(Products::class,'category_id');
+    }
 }

@@ -16,16 +16,24 @@ class SellerProductController extends Controller
      */
     public function index()
     {
-        $items = Products::where('user', Auth::id())->get(); // Retrieve products associated with the user
-        return view('seller-total-product-view', compact('items')); // Pass the products to the view
+        $user = Auth::user();
+    
+        // Join products with categories
+        $items = Products::where('user_id', $user->id)
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->select('products.*', 'categories.category as category_name')
+            ->get();
+    
+        return view('seller-total-product-view', compact('items'));
     }
+    
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        $userId = Auth::user()->id;
+        $userId = Auth::id();
         $categories = Category::all();
         $products = Products::find($userId);
         $columns = DB::select('SHOW COLUMNS FROM products');
@@ -45,7 +53,7 @@ class SellerProductController extends Controller
         'price' => 'required|numeric',
         'stock' => 'required|integer',
         'description' => 'nullable|string',
-        'coupons' => 'required|string',
+        'coupons' => 'nullable|string',
         'details.*.key' => 'required|string|max:255',
         'details.*.value' => 'required|string|max:255',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -56,8 +64,8 @@ class SellerProductController extends Controller
 
     // Create a new product instance
     $product = new Products();
-    $product->category = $category->id; // Use the ID of the existing or newly created category
-    $product->user = Auth::id(); // Get the authenticated user's ID
+    $product->category_id = $category->id; // Use the ID of the existing or newly created category
+    $product->user_id = Auth::id(); // Get the authenticated user's ID
     $product->name = $validatedData['name'];
     $product->price = $validatedData['price'];
     $product->coupons = $validatedData['coupons'] ?? "";
@@ -119,7 +127,7 @@ class SellerProductController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
-            'coupons' => 'required|string|min:5|max:8',
+            'coupons' => 'nullable|string|min:5|max:8',
             'details.*.key' => 'required|string|max:255',
             'details.*.value' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',

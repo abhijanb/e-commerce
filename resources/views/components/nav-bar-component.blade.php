@@ -1,4 +1,4 @@
-    <div class=" bg-gray-500  p-4 flex justify-between text-xs md:text-base sm:text-sm text-white">
+    <div class=" bg-amazonColor  p-4 flex justify-between text-xs md:text-base sm:text-sm text-white">
         <div class="flex space-x-4">
             <a href="/" ><div class="w-28 h-10 flex justify-center items-center "><p class="">E-commerce</p><span class="text-white">.in</span></div></a>
             <p class="hidden  sm:justify-center sm:flex sm:items-center ">Add your address</p>
@@ -15,11 +15,13 @@
             </div>
             <a href="/returnOrder" class="text-white flex justify-center items-center ">Return Orders</a>
         </div>
-        <div class="w-20 h-10 flex ">            
-            <div class=" relative"><img class="w-14 h-10 text-white"  src="images/amazon cart logo.png" alt="">
-            <div class="absolute bottom-[16px] left-[19px] font-bold text-white">1</div>
-            </div>        
-        </div>
+        <a href="{{ route('carts.index') }}">
+            <div class="w-20 h-10 flex ">
+                <div class=" relative"><img class="w-14 h-10 text-white"  src="images/amazon cart logo.png" alt="">
+                    <div class="absolute bottom-[16px] left-[19px] font-bold text-white">1</div>
+                </div>
+            </div>
+        </a>
     </div>
 <nav class=" bg-gray-200 p-4 flex justify-between text-xs md:text-base sm:text-sm">
     <div class=" flex items-center">

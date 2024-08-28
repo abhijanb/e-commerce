@@ -16,8 +16,9 @@ class SellerController extends Controller
     //
 public function sellerDashPage(){
     $user = Auth::user();
-   
-    $products = Products::where('user',Auth::id())->get();
+   $products = $user->products()->get();
+//    dd($products);
+    // $products = Products::where('user_id',Auth::id())->get();
     return view('seller',compact('products'));
 }
 

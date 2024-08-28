@@ -5,15 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Products extends Model
+class Product extends Model
 {
     use HasFactory;
-    public function user(){
-        return $this->belongsTo(User::class,'user');
-    }
     protected $fillable = [
-        'category',
-        'user',
+        'category_id',
+        'user_id',
         'name',
         'price',
         'stock',
@@ -22,4 +19,12 @@ class Products extends Model
         'image',
         'coupons'
     ];
+    public $timestamps = false;
+    public function user(){
+        return $this->belongsTo(User::class,'user_id');
+    }
+
+    public function carts(){
+        return $this->belongsToMany(Carts::class,'products_id');
+    }
 }

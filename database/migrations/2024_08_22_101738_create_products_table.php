@@ -11,21 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-        Schema::create('products',function(Blueprint $table){
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user');
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->string('image');
             $table->string('description');
             $table->json('details');
             $table->integer('price');
             $table->integer('stock');
-            $table->unsignedBigInteger('category');
+            $table->unsignedBigInteger('category_id');
             $table->string('coupons');
-            $table->foreign('category')->references('id')->on('categories')->onUpdate('cascade');
-            $table->foreign('user')->references('id')->on('users')->onUpdate('cascade');
-            $table->timestamps();
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
         });
     }
 
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('products');
     }
 };
