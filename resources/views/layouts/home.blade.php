@@ -7,7 +7,7 @@
     @vite('resources/css/app.css')
     <title>@yield('title')</title>
 </head>
-<body>
+<body class="bg-slate-200">
     <div class="sticky top-0">
         @yield('navbar')
     </div>

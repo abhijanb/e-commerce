@@ -1,27 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CheckoutController extends Controller
+class DashViewController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    //
     public function index()
     {
-        //
-        return view('paymentForm');
-    }
+        $products = Product::all();
+    
+        if ($products->isEmpty()) {
+            return response()->json(['message' => 'No products found'], 404);
+        }
+        $descriptions = $products->pluck('description');
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return response()->json($descriptions);
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -35,14 +33,6 @@ class CheckoutController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
     {
         //
     }
@@ -62,4 +52,5 @@ class CheckoutController extends Controller
     {
         //
     }
+
 }

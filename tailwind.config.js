@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {colors: {
       green: '#34eb58',
-      amazonColor: 'rgb(15, 17, 17)'
+      amazonColor: 'rgb(15, 17, 17)',
+      navbarText: 'rgb(255, 255, 255'
     }},
   },
   plugins: [],
